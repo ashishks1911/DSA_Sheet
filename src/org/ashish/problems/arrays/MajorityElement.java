@@ -4,13 +4,15 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
+ * https://leetcode.com/problems/majority-element/description/
+ * https://www.geeksforgeeks.org/problems/majority-element-1587115620/1
  *
  */
 public class MajorityElement {
     public static void main(String[] args) {
-
-        int []arr = {15};
+        int []arr = {2,2,1,1,1,2,2};
         System.out.println(solution(arr,1));
+        System.out.println(optimalSolution(arr));
     }
 
     //brute force
@@ -51,6 +53,29 @@ public class MajorityElement {
         return -1;
     }
 
+    //boyer moore majority voting algorithm
+    public static int optimalSolution(int[] arr){
+        int votes=0;
+        int candidate = -1;
+        for (int i=0; i<arr.length; i++){
+            if (votes==0){
+                candidate=arr[i];
+                votes=1;
+            }
+            else if(arr[i]==candidate)
+                votes++;
+            else
+                votes--;
+        }
+
+        //if array might not have a majority element : verify candidate
+        int count=0;
+        for (int i=0; i<arr.length; i++){
+            if (arr[i]==candidate) count++;
+        }
+        if (count>arr.length/2) return candidate;
+        return -1;
+    }
 
 
 }
