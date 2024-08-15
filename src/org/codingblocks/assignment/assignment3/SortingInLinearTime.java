@@ -1,25 +1,22 @@
-package org.ashish.problems.arrays;
+package org.codingblocks.assignment.assignment3;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * https://leetcode.com/problems/sort-colors/description/
- *
- */
-public class SortArrayContaining012 {
+public class SortingInLinearTime {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
         int[] arr = new int[n];
-        for (int i=0; i<n; i++){
-            arr[i] = sc.nextInt();
-        }
+        for (int i = 0; i < n; i++)
+            arr[i] = scn.nextInt();
         sortColors(arr);
-        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 
-    public static void sortColors(int[] nums){
+    public static void sortColors(int[] nums) {
+        // Write your code here
         int zero = 0, one = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0)
@@ -48,4 +45,5 @@ public class SortArrayContaining012 {
             i++;
         }
     }
+
 }
