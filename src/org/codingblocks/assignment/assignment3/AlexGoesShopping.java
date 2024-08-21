@@ -2,6 +2,9 @@ package org.codingblocks.assignment.assignment3;
 
 import java.util.Scanner;
 
+/**
+ * https://hack.codingblocks.com/app/contests/6435
+ */
 public class AlexGoesShopping {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
