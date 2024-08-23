@@ -1,4 +1,4 @@
-package org.ashish.problems.arrays;
+package org.ashish.interview.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,17 +21,6 @@ public class WiggleSort {
     }
 
     public static void wiggleSort(int [] arr){
-        Arrays.sort(arr);
-        int i=0;
-        int j=arr.length-1;
-        ArrayList<Integer> list  = new ArrayList<>();
-        while (i<j){
-            list.add(arr[i]);
-            list.add(arr[j]);
-            i++;
-            j--;
-        }
-        list.stream().forEach(s-> System.out.print(s+" "));
 
     }
 

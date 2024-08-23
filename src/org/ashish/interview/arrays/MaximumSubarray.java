@@ -1,4 +1,4 @@
-package org.ashish.problems.arrays;
+package org.ashish.interview.arrays;
 
 public class MaximumSubarray {
     public static void main(String[] args) {

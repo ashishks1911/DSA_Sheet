@@ -1,4 +1,4 @@
-package org.ashish.problems.arrays;
+package org.ashish.interview.arrays;
 
 import java.util.Arrays;
 import java.util.HashMap;
