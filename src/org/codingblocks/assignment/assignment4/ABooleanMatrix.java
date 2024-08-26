@@ -1,5 +1,6 @@
 package org.codingblocks.assignment.assignment4;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ABooleanMatrix {
@@ -19,24 +20,19 @@ public class ABooleanMatrix {
     }
 
     public static void booleanMatrix(int[][] arr) {
+        int[][] org = copyArray(arr);
         for (int i = 0; i < arr.length; i++) {
-            boolean exist = false;
             for (int j = 0; j < arr[i].length; j++) {
-                if (arr[i][j] == 1) {
-                    for (int row = 0; row < arr.length; row++) {
-                        arr[row][j] = 1;
+                if (org[i][j] == 1) {
+                    //fill row and column with 1s
+                    for (int col=0; col<arr[i].length; col++){
+                        arr[i][col]=1;
                     }
-                    exist = true;
-                    break;
+                    for (int row = 0; row<arr.length; row++){
+                        arr[row][j]=1;
+                    }
                 }
             }
-            if (exist) {
-                for (int col = 0; col < arr[i].length; col++) {
-                    arr[i][col] = 1;
-                }
-            }
-            display(arr);
-            System.out.println("---------------------------");
         }
     }
 
@@ -47,5 +43,15 @@ public class ABooleanMatrix {
             }
             System.out.println();
         }
+    }
+
+    public static int[][] copyArray(int [][]arr){
+        int [][]newArray = new int[arr.length][arr[0].length];
+        for (int i=0; i<arr.length; i++){
+            for (int j=0; j<arr[0].length; j++){
+                newArray[i][j] = arr[i][j];
+            }
+        }
+        return newArray;
     }
 }
