@@ -25,7 +25,7 @@ public class SpiralMatrix {
         int minc =0;
         int maxr = arr.length-1;
         int maxc = arr[0].length-1;
-        int te = arr.length*arr[0].length;
+        int te = arr.length*arr[0].length;  //total elements
         int c=0;
         while (c<te) {
             for (int i = minc; i <= maxc && c<te; i++) {
