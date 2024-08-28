@@ -16,9 +16,10 @@ public class MurthalParantha {
     }
 
     public static int timeNeeded(int[] rank, int parantha) {
-        int[] timeArr = new int[rank.length];
+        int[] timeArr = rank.clone();
         int prefix[] = rank.clone();
         while (parantha!=0) {
+            System.out.println(Arrays.toString(prefix));
             int mini = minimumTime(prefix);
             for (int j = 0; j < rank.length; j++) {
                 if (mini == prefix[j]) {
@@ -29,8 +30,11 @@ public class MurthalParantha {
                 }
             }
         }
+        System.out.println(Arrays.toString(timeArr));
+        System.out.println(Arrays.toString(prefix));
+
         for (int i=0; i<rank.length; i++){
-            prefix[i] -= rank[i];
+            prefix[i] -= timeArr[i];
         }
         System.out.println(Arrays.toString(prefix));
         int max = Integer.MIN_VALUE;
