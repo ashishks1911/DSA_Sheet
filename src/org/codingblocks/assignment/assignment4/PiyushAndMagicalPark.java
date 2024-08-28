@@ -27,10 +27,7 @@ public class PiyushAndMagicalPark {
         };
         boolean win = true;
         for (int i = 0; i < arr.length; i++) {
-                if (S<K){
-                    win = false;
-                    break;
-                }
+
             for (int j = 0; j < arr[0].length; j++) {
                 if (S<K){
                     win=false;
@@ -51,11 +48,11 @@ public class PiyushAndMagicalPark {
 
         if (win){
             System.out.println("Yes");
+            System.out.println(S);
         }
         else {
             System.out.println("No");
         }
-        System.out.println(S);
 
     }
 
