@@ -36,7 +36,7 @@ public class _7_KokoEatingBananas {
     public static int bruteForce(int[] piles, int h) {
         int max = maximum(piles);
         for (int k = 1; k <= max; k++) {
-            if (canKokoEat(piles.clone(), k, h)) {
+            if (canKokoEat(piles, k, h)) {
                 return k;
             }
         }
@@ -59,7 +59,7 @@ public class _7_KokoEatingBananas {
     }
     public static boolean canKokoEat(int[] piles, int k, int h) {
         int i = 0;
-        int sum = 0;
+        long sum = 0;
         while (i < piles.length) {
             if (piles[i]%k==0)
                 sum = sum + (piles[i]/k);
