@@ -16,7 +16,6 @@ public class MurthalParantha {
     }
 
     public static long binarySearch(int[] rank, int parantha) {
-        Arrays.sort(rank);
         int lo = 0;
         int ans = 0;
         int hi = Integer.MAX_VALUE;
@@ -35,9 +34,9 @@ public class MurthalParantha {
     /**
      * time taken by cook with R rank
      * R + 2R + 3R + 4R + .......nR    =>  R * (1+2+3+4+....n)
-     * =>  R * (n * (n-1)/2)
-     * given time >= R * (n*(n-1)/2)
-     * (2*given time)/ R >= n*(n-1)
+     * =>  R * (n * (n+1)/2)
+     * given time >= R * (n*(n+1)/2)
+     * (2*given time)/ R >= n*(n+1)
      */
     public static boolean isItPossible(int[] rank, int parantha, int minTime) {
         for (int i = 0; i < rank.length; i++) {
