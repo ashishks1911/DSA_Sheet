@@ -26,7 +26,9 @@ public class FormBiggestNumber {
         Comparator<String> comparator = new Comparator<String>() {
             @Override
             public int compare(String t1, String t2) {
-                return t1.compareTo(t2);
+                String temp1 = t1+t2;
+                String temp2 = t2+t1;
+                return temp1.compareTo(temp2);
             }
         };
 
