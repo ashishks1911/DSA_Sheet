@@ -1,4 +1,4 @@
-package org.codingblocks.recursion;
+package org.codingblocks.recursion.lec17;
 
 public class Permutation2 {
     public static void main(String[] args) {

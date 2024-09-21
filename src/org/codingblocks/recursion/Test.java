@@ -15,6 +15,7 @@ public class Test {
 //        System.out.println(searchFirstOccurrence(arr,item,0));
 //        System.out.println(fact(4,1));
         System.out.println(fibonacci(10));
+
     }
 
 

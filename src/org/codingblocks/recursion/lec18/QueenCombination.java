@@ -1,4 +1,4 @@
-package org.codingblocks.recursion;
+package org.codingblocks.recursion.lec18;
 
 public class QueenCombination {
     public static void main(String[] args) {
