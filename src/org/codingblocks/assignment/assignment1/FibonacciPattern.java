@@ -1,6 +1,7 @@
 package org.codingblocks.assignment.assignment1;
 /**
  * Assignment link : https://hack.codingblocks.com/app/contests/6289
+ * Assignment on Patterns
  *
  */
 

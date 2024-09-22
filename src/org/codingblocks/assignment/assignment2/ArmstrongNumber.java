@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 /**
  * https://hack.codingblocks.com/app/contests/6374
+ * Assignment on Number System and Data types
+ *
  */
 public class ArmstrongNumber {
     public static void main(String[] args) {

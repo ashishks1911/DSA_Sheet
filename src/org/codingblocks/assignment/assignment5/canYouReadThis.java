@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 /**
  * You are given a string, S, written in Camel Case. FindAllTheWordsContainedInIt.
+ * https://hack.codingblocks.com/app/contests/6537
+ * Assignment on String
  *
  */
 public class canYouReadThis {

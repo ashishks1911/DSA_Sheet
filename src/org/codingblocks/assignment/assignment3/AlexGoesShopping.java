@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 /**
  * https://hack.codingblocks.com/app/contests/6435
+ * Assignment on Arrays
+ *
  */
 public class AlexGoesShopping {
     public static void main(String[] args) {

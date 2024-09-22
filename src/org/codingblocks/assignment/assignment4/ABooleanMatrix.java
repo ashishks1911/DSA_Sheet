@@ -3,6 +3,11 @@ package org.codingblocks.assignment.assignment4;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * https://hack.codingblocks.com/app/contests/6477
+ * Assignment on 2D arrays and binary Search
+ *
+ */
 public class ABooleanMatrix {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
