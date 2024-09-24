@@ -1,8 +1,5 @@
 package org.ashish.interview.arrays;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * https://www.naukri.com/code360/problem-details/wiggle-sort_3155169
  *
@@ -14,7 +11,7 @@ import java.util.Arrays;
  *
  *
  */
-public class WiggleSort {
+public class P3_WiggleSort {
     public static void main(String[] args) {
         int []nums = new int[]{1, 2, 3, 4, 5};
         wiggleSort(nums);

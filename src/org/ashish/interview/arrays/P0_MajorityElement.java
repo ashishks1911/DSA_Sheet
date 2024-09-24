@@ -8,7 +8,7 @@ import java.util.HashMap;
  * https://www.geeksforgeeks.org/problems/majority-element-1587115620/1
  *
  */
-public class MajorityElement {
+public class P0_MajorityElement {
     public static void main(String[] args) {
         int []arr = {2,2,1,1,1,2,2};
         System.out.println(solution(arr,1));

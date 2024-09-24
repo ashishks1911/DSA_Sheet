@@ -11,7 +11,6 @@ import java.util.Scanner;
  *
  */
 public class canYouReadThis {
-    private static int anInt;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
