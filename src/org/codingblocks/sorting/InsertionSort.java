@@ -21,13 +21,11 @@ public class InsertionSort {
         int j = i-1;
         System.out.println(Arrays.toString(arr));
         while ( j>=0 && arr[j]>item){
-            System.out.println("hi");
             arr[j+1]= arr[j];
             j--;
         }
         System.out.println(Arrays.toString(arr));
         arr[j+1]=item;
-        System.out.println("hi "+Arrays.toString(arr));
     }
 
 

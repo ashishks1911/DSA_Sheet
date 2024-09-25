@@ -49,42 +49,4 @@ public class CalculateTheSum {
         }
     }
 
-    public static void suhani() {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for (int a = 0; a < arr.length; a++) {
-            arr[a] = sc.nextInt();
-
-        }
-        int q = sc.nextInt();
-        int x = sc.nextInt();
-        int j = 0;
-
-        int sum = 0;
-        int[] rough = new int[n];
-        for (int i = 0; i < arr.length; i++) {
-            rough[i] = arr[i];
-        }
-
-        for (int f = 1; q - f >= 0; f++) {
-            for (j = 0; j < arr.length; j++) {
-                int parameter = j - x;
-                if (parameter < 0) {
-                    parameter += n;
-                }
-                rough[j] = arr[j] + arr[parameter];
-            }
-            for (int k = 0; k < arr.length; k++) {
-                arr[k] = rough[k];
-            }
-        }
-
-        for (int z = 0; z < arr.length; z++) {
-            sum += rough[z];
-        }
-
-        System.out.print(sum % (Math.pow(10, 9) + 7));
-    }
-
 }
