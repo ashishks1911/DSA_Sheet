@@ -1,5 +1,6 @@
 package org.codingblocks.assignment.assignment3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -58,6 +59,25 @@ public class ProductOfArrayExceptSelf {
 
         for (int i = 0; i < n; i++) {
             ans[i] = prefix[i] * suffix[i];
+        }
+        return ans;
+    }
+
+    public static long[] optimal(int []arr){
+        int n = arr.length;
+        long ans [] = new long[n];
+        Arrays.fill(ans,1);
+
+        int temp=1;
+        for (int i=0; i<n; i++){
+            ans[i] = temp;
+            temp *= arr[i];
+        }
+
+        temp=1;
+        for (int i=n-1; i>=0; i--){
+            ans[i] *= temp;
+            temp *=arr[i];
         }
         return ans;
     }
