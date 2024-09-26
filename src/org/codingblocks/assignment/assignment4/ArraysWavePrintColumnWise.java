@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 21 22 23 24      =>      [10][11][12][13]   
  * 31 32 33 34              [20][21][22][23]
  * 41 42 43 44              [30][31][32][33]
- *
+ * 
  */
 public class ArraysWavePrintColumnWise {
     public static void main(String[] args) {
