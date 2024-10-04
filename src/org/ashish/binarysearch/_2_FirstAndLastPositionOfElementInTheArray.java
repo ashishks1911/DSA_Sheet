@@ -47,4 +47,44 @@ public class _2_FirstAndLastPositionOfElementInTheArray {
         return new int[]{fo, lo};
 
     }
+    public static int[] firstAndLastPosition(ArrayList<Integer> arr, int n, int k) {
+        // Write your code here.
+        int lb = lowerBound(arr, n, k);
+        if(lb == n || arr.get(lb)!=k)
+            return new int[]{-1,-1};
+        int ub = upperBound(arr, n, k)-1;
+        return new int[]{lb,ub};
+
+    }
+
+    public static int lowerBound(ArrayList<Integer> arr, int n, int k){
+        int low = 0, high = n-1;
+        int ans = n;
+        while(low<=high){
+            int mid = low + (high - low)/2;
+            if(arr.get(mid)>=k){
+                ans=mid;
+                high = mid - 1;
+            }
+            else{
+                low = mid + 1;
+            }
+        }
+        return ans;
+    }
+    public static int upperBound(ArrayList<Integer> arr, int n, int k){
+        int low = 0, high = n-1;
+        int ans = n;
+        while(low<=high){
+            int mid = low + (high - low)/2;
+            if(arr.get(mid)>k){
+                ans=mid;
+                high = mid - 1;
+            }
+            else{
+                low = mid + 1;
+            }
+        }
+        return ans;
+    }
 }
