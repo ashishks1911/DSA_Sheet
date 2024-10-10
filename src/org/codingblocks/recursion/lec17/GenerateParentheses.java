@@ -15,7 +15,7 @@ public class GenerateParentheses {
     }
     public static void generateParentheses(int n, int open, int close, String ans, List<String> li){
         if (open==n && close==n){
-            System.out.println(ans);
+            li.add(ans);
             return;
         }
         if (open>n || close>open){
