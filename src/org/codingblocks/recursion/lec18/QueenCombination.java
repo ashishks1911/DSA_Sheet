@@ -14,6 +14,7 @@ public class QueenCombination {
             System.out.println(ans);
             return;
         }
+        //no need of board , we can remove it also
         for (int i = idx; i < board.length; i++) {
             if (!board[i]) {
                 board[i] = true;

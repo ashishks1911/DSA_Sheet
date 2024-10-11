@@ -19,6 +19,19 @@ public class SubsetProblem {
         System.out.println();
         System.out.println(ans);
     }
+    //better - used coin combination( bcoz repetition not allowed)
+    public static int subsequence(int []arr, String ans, int target, int idx){
+        if(target==0){
+            System.out.print(ans+" ");
+            return 1;
+        }
+        int sum=0;
+        for(int i=idx; i<arr.length; i++){
+            if(target>=arr[i])
+                sum += subsequence(arr, ans+arr[i]+" ", target - arr[i], i + 1);
+        }
+        return sum;
+    }
 
     public static int subsequence(int[] arr, int idx, List<Integer> li, int target) {
         if (idx == arr.length) {
