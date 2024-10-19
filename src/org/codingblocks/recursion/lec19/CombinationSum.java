@@ -1,5 +1,9 @@
 package org.codingblocks.recursion.lec19;
 
+/**
+ * Also look at combination sum ii,
+ * subset i & subset ii on leetcode
+ */
 public class CombinationSum {
     public static void main(String[] args) {
         int coin[] = {1,2,3};
