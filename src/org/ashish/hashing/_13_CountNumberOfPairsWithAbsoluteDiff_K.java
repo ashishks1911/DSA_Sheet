@@ -34,7 +34,8 @@ public class _13_CountNumberOfPairsWithAbsoluteDiff_K {
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i] - k)) {
                 count += map.get(nums[i] - k);
-            } else if (map.containsKey(nums[i] + k)) {
+            }
+            if (map.containsKey(nums[i] + k)) {
                 count += map.get(nums[i] + k);
             }
             map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
