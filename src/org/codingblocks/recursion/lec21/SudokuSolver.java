@@ -14,16 +14,13 @@ public class SudokuSolver {
             col = 0;
         }
         if (row == grid.length) {
-            System.out.println("hi 1");
             display(grid);
             return;
         }
         if (grid[row][col] != 0) {
-            System.out.println("h2");
             print(grid, row, col + 1);
         } else {
             for (int val = 1; val <= 9; val++) {
-                System.out.println("h3");
                 if (isSafe(grid, row, col, val)) {
                     grid[row][col] = val;
                     print(grid, row, col + 1);
@@ -48,8 +45,8 @@ public class SudokuSolver {
         //3*3 matrix
         int r = row - row % 3;
         int c = col - col % 3;
-        for (int i = 0; i < r + 3; i++) {
-            for (int j = 0; j < c + 3; j++) {
+        for (int i = r; i < r + 3; i++) {
+            for (int j = c; j < c + 3; j++) {
                 if (grid[i][j] == val) {
                     return false;
                 }
