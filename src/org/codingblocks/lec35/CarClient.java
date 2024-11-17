@@ -1,5 +1,8 @@
 package org.codingblocks.lec35;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class CarClient {
     public static void main(String[] args) {
         Car[] arr = new Car[5];
@@ -8,9 +11,26 @@ public class CarClient {
         arr[2] = new Car(345, 3, "yellow");
         arr[3] = new Car(34, 89, "Grey");
         arr[4] = new Car(8907, 6, "red");
-        display(arr);
-        System.out.println("-------------------------------");
-        bubbleSort(arr);
+        Arrays.sort(arr, new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return o1.price - o2.price;
+            }
+        });
+        Arrays.sort(arr, new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return o1.speed - o2.speed;
+            }
+        });
+        Arrays.sort(arr, new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return o1.color.compareTo(o2.color);
+            }
+        });
+
+//        bubbleSort(arr);
         display(arr);
     }
 
