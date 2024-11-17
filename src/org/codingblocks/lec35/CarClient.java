@@ -48,8 +48,8 @@ public class CarClient {
                 //if (arr[i] > arr[i + 1]) {      // comparison of addresses gives error
                 if (arr[i].compareTo(arr[i + 1])>0) {
                     T temp = arr[i];
-                    arr[i + 1] = arr[i];
-                    arr[i] = temp;
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
                 }
             }
         }
