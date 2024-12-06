@@ -1,0 +1,17 @@
+Merge Sort and Quick sort both are based on Divide and Conquer algorithm.
+
+Divide and Conquer Algorithm steps :
+      1. Divide the problem into sub problems
+      2. Solve sub problems using recursion
+      3. combine the results of sub problem
+
+Divide :
+                      {7 , 5, 1, 4, 3}
+                       /            \
+                  {7, 5, 1}        {4, 3}
+                  /       \         /   \
+              {7, 5}      {1}     {4}   {3}
+              /    \
+            {7}    {5}
+
+Arrays.sort is a hybrid algorithm.

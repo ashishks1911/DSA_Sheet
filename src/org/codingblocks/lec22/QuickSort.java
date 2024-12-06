@@ -1,25 +1,28 @@
-package org.codingblocks.recursion.lec21;
+package org.codingblocks.lec22;
 
 import java.util.Arrays;
 
-public class PartitionInArray {
+public class QuickSort {
     public static void main(String[] args) {
         int arr[] = {5, 7, 2, 1, 8, 3, 4};
-        int idx = partition(arr, 0, arr.length - 1);
-        System.out.println(idx);
+        sort(arr, 0, arr.length - 1);
+        System.out.println(partition(arr,0,arr.length-1));
         System.out.println(Arrays.toString(arr));
     }
 
-    /**
-     * Given an array : Arrange the last element in such a way that elements lesser than it
-     * will fall on left side and the elements greater than it are on the right side.
-     * T.C constraint : O(n)                //  Arrays.sort => nlogn
-     *
-     * @param arr
-     * @param si start index of arr
-     * @param ei end index of arr
-     * @return
-     */
+    public static void sort(int[] arr, int si, int ei) {
+        if (si>=ei){
+            return;
+        }
+        System.out.println(Arrays.toString(arr) +", "+ si +" : "+ ei);
+        int idx = partition(arr, si, ei);
+        sort(arr, si, idx - 1);
+        System.out.println(Arrays.toString(arr) +", "+ si +" : "+ ei);
+        sort(arr, idx + 1, ei);
+        System.out.println(Arrays.toString(arr) +", "+ si +" : "+ ei);
+
+    }
+
     public static int partition(int[] arr, int si, int ei) {
         int item = arr[ei];  //for last index
         int idx = si;
@@ -36,5 +39,4 @@ public class PartitionInArray {
         arr[ei] = temp;
         return idx;
     }
-
 }
