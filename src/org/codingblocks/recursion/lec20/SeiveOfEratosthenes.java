@@ -20,7 +20,7 @@ public class SeiveOfEratosthenes {
         prime[1] = 1;   //marked not prime
         for (int i = 2; i * i <= prime.length; i++) {
             if (prime[i] == 0) {
-                for (int j = 2; i * j < prime.length; j++) {
+                for (int j = i; i * j < prime.length; j++) {
                     prime[i * j] = 1;
                 }
             }
