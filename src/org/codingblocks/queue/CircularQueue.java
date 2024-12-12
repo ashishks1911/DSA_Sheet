@@ -56,4 +56,8 @@ public class CircularQueue {
         }
         System.out.println();
     }
+
+    public int size() {
+        return size;
+    }
 }
