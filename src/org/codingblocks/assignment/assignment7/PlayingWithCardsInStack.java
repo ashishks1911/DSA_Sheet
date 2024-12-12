@@ -1,10 +1,9 @@
 package org.codingblocks.assignment.assignment7;
 
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class PlayingWithCardsInStack {
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
@@ -16,10 +15,12 @@ public class PlayingWithCardsInStack {
         }
 
         Stack<Integer> pileA = new Stack<>();
-        Stack<Integer> pileB = new Stack<>();
+        List<Stack<Integer>> pileBList = new ArrayList<>();
+        List<Integer> primes = primeNumbers();
 
-        for (int i = 1; i <= q; i++) {
-            int prime = primeNumber(i);
+        for (int i = 0; i < q; i++) {
+            int prime = primes.get(i);
+            Stack<Integer> pileB = new Stack<>();
             while (!st.isEmpty()) {
                 int x = st.pop();
                 if (x % prime == 0) {
@@ -28,20 +29,28 @@ public class PlayingWithCardsInStack {
                     pileA.push(x);
                 }
             }
+            st.clear();
+            for (int val : pileA){
+                st.push(val);
+            }
+            pileBList.add(pileB);
+            pileA.clear();
         }
 
-        while (!pileB.isEmpty()){
-            System.out.println(pileB.pop());
-        }
 
-        while (!pileA.isEmpty()){
-            System.out.println(pileA.pop());
+        for (Stack<Integer> pileB : pileBList) {
+            while (!pileB.isEmpty()) {
+                System.out.println(pileB.pop());
+            }
+        }
+        while (!st.isEmpty()) {
+            System.out.println(st.pop());
         }
     }
 
     public static final int SIZE = 100000;
 
-    public static int primeNumber(int n) {
+    public static List<Integer> primeNumbers() {
         boolean prime[] = new boolean[SIZE + 1];
         Arrays.fill(prime, true);
         prime[0] = false;
@@ -53,16 +62,11 @@ public class PlayingWithCardsInStack {
                 }
             }
         }
-        int count = 0;
-        int k = 2;
-        while (k < prime.length) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int k = 2; k < prime.length; k++) {
             if (prime[k])
-                count++;
-
-            if (count == n)
-                break;
-            k++;
+                list.add(k);
         }
-        return k;
+        return list;
     }
 }
