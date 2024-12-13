@@ -38,15 +38,15 @@ public class LinkedList {
 
     }
 
-    public void addAtIndex(int item, int k) {
-        if (k == 0) {
+    public void addAtIndex(int item, int index) {
+        if (index == 0) {
             addFirst(item);
-        } else if (k == size) {
+        } else if (index == size) {
             addLast(item);
         } else {
             Node nn = new Node();
             nn.val = item;
-            Node prev = getNode(k - 1);
+            Node prev = getNode(index- 1);
             nn.next = prev.next;
             prev.next = nn;
             size++;
