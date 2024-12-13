@@ -79,11 +79,11 @@ public class LinkedList {
 
     public void display() {
         Node temp = head;
-        while (temp != null) {
+        while (temp.next != null) {
             System.out.print(temp.val + "-->");
             temp = temp.next;
         }
-        System.out.println(".");
+        System.out.println(temp.val);
     }
 
     // O(1)
@@ -141,5 +141,8 @@ public class LinkedList {
 
     public void setHead(Node head) {
         this.head = head;
+    }
+    public Node getNode(){
+         return new Node();
     }
 }

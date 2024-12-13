@@ -14,7 +14,7 @@ public class MiddleOfTheLinkedList {
         System.out.println(ans.val);
 
     }
-    //Efficient
+    //Efficient : in case of even nodes get the 2nd
     public static LinkedList.Node middleNode(LinkedList.Node head) {
         LinkedList.Node slow = head;
         LinkedList.Node fast = head;

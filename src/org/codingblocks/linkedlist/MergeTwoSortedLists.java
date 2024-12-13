@@ -7,19 +7,18 @@ public class MergeTwoSortedLists {
         list1.addLast(2);
         list1.addLast(4);
         LinkedList list2 = new LinkedList();
-        list1.addLast(1);
-        list1.addLast(3);
-        list1.addLast(4);
+        list2.addLast(1);
+        list2.addLast(3);
+        list2.addLast(4);
         LinkedList.Node head = mergeTwoLists(list1.getHead(), list2.getHead());
-        while (head!=null){
-            System.out.println(head.val+"-->");
-            head = head.next;
-        }
+        LinkedList ll = new LinkedList();
+        ll.setHead(head);
+        ll.display();
 
     }
     public static LinkedList.Node mergeTwoLists(LinkedList.Node list1, LinkedList.Node list2) {
         LinkedList dummy = new LinkedList();
-        LinkedList.Node ll = dummy.getHead();
+        LinkedList.Node ll = dummy.getNode();
         LinkedList.Node temp = ll;
         while (list1 != null && list2 != null) {
             if (list1.val < list2.val) {
@@ -32,11 +31,11 @@ public class MergeTwoSortedLists {
                 list2 = list2.next;
             }
         }
-        if (list1 != null) {
-            ll.next = list1;
-        }
-        if (list2 != null) {
+        if (list1 == null) {
             ll.next = list2;
+        }
+        if (list2 == null) {
+            ll.next = list1;
         }
         return temp.next;
     }
