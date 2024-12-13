@@ -131,4 +131,15 @@ public class LinkedList {
 
     }
 
+    public Node getHead() {
+        return head;
+    }
+
+    public Node getTail() {
+        return tail;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
 }
