@@ -26,7 +26,6 @@ public class LinkedListKAppend {
             }
 
             LinkNode.Node nn = temp.next;
-            System.out.println();
             LinkNode.Node tail = temp.next;
             while (tail.next != null) {
                 tail = tail.next;
