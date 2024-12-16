@@ -6,31 +6,58 @@ public class LinkedListOddEven {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        LinkNode ll = new LinkNode();
+
+        Node head = null, tail = null;
         for (int i = 0; i < n; i++) {
-            ll.insert(sc.nextInt());
-        }
-
-        LinkNode l1 = new LinkNode();
-        LinkNode l2 = new LinkNode();
-
-        Node head = ll.head;
-        while (head != null) {
-            if ((head.data & 1) == 0) {
-                l2.insert(head.data);
+            int val = sc.nextInt();
+            Node newNode = new Node(val);
+            if (head == null) {
+                head = tail = newNode;
             } else {
-                l1.insert(head.data);
+                tail.next = newNode;
+                tail = newNode;
             }
-            head = head.next;
         }
-        l1.tail.next = l2.head;
 
-        Node temp = l1.head;
+        Node list = oddEven(head);
+        while (list != null) {
+            System.out.print(list.data + " ");
+            list = list.next;
+        }
+    }
+
+
+    public static Node oddEven(Node head) {
+        Node evenHead = null, evenTail = null;
+        Node oddHead = null, oddTail = null;
+        Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            if ((temp.data & 1) == 0) {
+                //even
+                if (evenHead == null) {
+                    evenHead = evenTail = temp;
+                } else {
+                    evenTail.next = temp;
+                    evenTail = temp;
+                }
+            } else {
+                //odd
+                if (oddHead == null) {
+                    oddHead = oddTail = temp;
+                } else {
+                    oddTail.next = temp;
+                    oddTail = temp;
+                }
+            }
             temp = temp.next;
         }
-
+        if (oddTail != null) {
+            oddTail.next = evenHead;
+        }
+        if (evenTail != null) {
+            evenTail.next = null;
+        }
+        return oddHead != null ? oddHead : evenHead;
     }
 
     static class Node {
@@ -39,22 +66,6 @@ public class LinkedListOddEven {
 
         public Node(int item) {
             data = item;
-        }
-    }
-
-    static class LinkNode {
-        public Node head;
-        public Node tail;
-
-        public void insert(int item) {
-            Node nn = new Node(item);
-            if (head == null) {
-                head = nn;
-                tail = nn;
-            } else {
-                tail.next = nn;
-                tail = nn;
-            }
         }
     }
 
