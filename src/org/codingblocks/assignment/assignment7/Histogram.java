@@ -17,10 +17,10 @@ public class Histogram {
 
     public static long hist(int[] arr, StacksUsingArrays stack) throws Exception {
         //Write Your Code here
-        int area = 0;
+        long area = 0;
         for (int i = 0; i < arr.length; i++) {
             while (!stack.isEmpty() && arr[i] < arr[stack.top()]) {
-                int h = arr[stack.pop()];
+                long h = arr[stack.pop()];
                 int r = i;
                 if (!stack.isEmpty()) {
                     int l = stack.top();
@@ -33,7 +33,7 @@ public class Histogram {
         }
         int r = arr.length;
         while (!stack.isEmpty()) {
-            int h = arr[stack.pop()];
+            long h = arr[stack.pop()];
             if (!stack.isEmpty()) {
                 int l = stack.top();
                 area = Math.max(area, h * (r - l - 1));
