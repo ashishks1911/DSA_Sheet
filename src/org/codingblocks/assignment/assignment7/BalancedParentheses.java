@@ -2,6 +2,10 @@ package org.codingblocks.assignment.assignment7;
 
 import java.util.Scanner;
 
+/**
+ * https://hack.codingblocks.com/app/contests/6814
+ * Assignment on Stack, Queue and Linked List
+ */
 public class BalancedParentheses {
     public static void main(String[] args) throws Exception {
         Scanner s = new Scanner(System.in);

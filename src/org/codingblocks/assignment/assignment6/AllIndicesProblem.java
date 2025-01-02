@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * https://hack.codingblocks.com/app/contests/6641
+ * Assignment on Recursion
+ */
 public class AllIndicesProblem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
