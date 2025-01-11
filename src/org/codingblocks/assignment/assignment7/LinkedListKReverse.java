@@ -24,7 +24,8 @@ public class LinkedListKReverse {
         display(hh);
 
     }
-    public static Node reverseKGroup(Node head, int k){
+
+    public static Node reverseKGroup(Node head, int k) {
         Node curr = head;
         Node newHead = null;
         Node newTail = null;
@@ -32,6 +33,13 @@ public class LinkedListKReverse {
             int count = 0;
             Node groupHead = curr;
             Node prev = null;
+            //Handling leftovers nodes
+            if (size(curr) < k) {
+                if(newTail!=null){
+                    newTail.next = curr;
+                }
+                break;
+            }
             while (curr != null && count < k) {
                 Node ahead = curr.next;
                 curr.next = prev;
@@ -55,7 +63,7 @@ public class LinkedListKReverse {
     public static void display(Node head) {
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data +" ");
+            System.out.print(temp.data + " ");
             temp = temp.next;
         }
         System.out.println();
@@ -69,5 +77,14 @@ public class LinkedListKReverse {
             this.data = item;
             this.next = null;
         }
+    }
+    public  static int size(Node head) {
+        Node curr = head;
+        int count = 0;
+        while (curr != null) {
+            count++;
+            curr = curr.next;
+        }
+        return count;
     }
 }
