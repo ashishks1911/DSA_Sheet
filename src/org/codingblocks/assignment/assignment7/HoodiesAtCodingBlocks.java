@@ -88,81 +88,40 @@ public class HoodiesAtCodingBlocks {
     public static void hoodies(int q) throws Exception {
 
         // Write your Code here
-        Queue q1 = new Queue();
-        Queue q2 = new Queue();
-        Queue q3 = new Queue();
-        Queue q4 = new Queue();
+        Queue[] courses = new Queue[5];
+        for (int i = 1; i <= 4; i++) {
+            courses[i] = new Queue();
+        }
 
-        Queue seq = new Queue();
-        boolean isOne = false, isTwo = false, isThree = false, isFour = false;
+        Queue courseOrder = new Queue();
+        boolean[] activeCourses = new boolean[5];
 
         while (q-- > 0) {
             String op = scn.next();
             if (op.equals("E")) {
                 int course = scn.nextInt();
                 int rollNo = scn.nextInt();
-                switch (course) {
-                    case 1:
-                        q1.enqueue(rollNo);
-                        if (!isOne) {
-                            seq.enqueue(1);
-                            isOne = true;
-                        }
-                        break;
-                    case 2:
-                        q2.enqueue(rollNo);
-                        if (!isTwo) {
-                            seq.enqueue(2);
-                            isTwo = true;
-                        }
-                        break;
-                    case 3:
-                        q3.enqueue(rollNo);
-                        if (!isThree) {
-                            seq.enqueue(3);
-                            isThree = true;
-                        }
-                        break;
-                    case 4:
-                        q4.enqueue(rollNo);
-                        if (!isFour) {
-                            seq.enqueue(4);
-                            isFour = true;
-                        }
-                        break;
-                }
+                courses[course].enqueue(rollNo);
 
+                if (!activeCourses[course]) {
+                    courseOrder.enqueue(course);
+                    activeCourses[course] = true;
+                }
             } else {
-                int rmq = seq.getFront();
-                if (rmq == 1) {
-                    System.out.println(rmq + " " + q1.dequeue());
-                    if (q1.isEmpty()) {
-                        seq.dequeue();
-                    }
-                } else if (rmq == 2) {
-                    System.out.println(rmq + " " + q2.dequeue());
-                    if (q2.isEmpty()) {
-                        seq.dequeue();
-                    }
-                } else if (rmq == 3) {
-                    System.out.println(rmq + " " + q3.dequeue());
-                    if (q3.isEmpty()) {
-                        seq.dequeue();
-                    }
-                } else {
-                    System.out.println(rmq + " " + q4.dequeue());
-                    if (q4.isEmpty()) {
-                        seq.dequeue();
-                    }
+                int currentCourse = courseOrder.getFront();
+                int frontStudent = courses[currentCourse].dequeue();
+                System.out.println(currentCourse + " " + frontStudent);
+                if (courses[currentCourse].isEmpty()) {
+                    courseOrder.dequeue();
+                    activeCourses[currentCourse] = false;
                 }
-
             }
-
         }
 
     }
 
     static Scanner scn = new Scanner(System.in);
+
     public static void main(String[] args) throws Exception {
 
         int n = scn.nextInt();
