@@ -2,10 +2,29 @@ package org.codingblocks.trie;
 
 import org.codingblocks.lec38.HashMap;
 
+import java.util.Scanner;
+
 /**
  * https://www.hackerrank.com/challenges/ctci-contacts/problem
  */
 public class TrieContacts {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        TrieContacts trie = new TrieContacts();
+        for (int i = 0; i < n; i++) {
+            String op = sc.next();
+            String contact = sc.next();
+            if(op.equals("add")){
+                trie.insert(contact);
+            }
+            else{
+                System.out.println(trie.find(contact));
+            }
+            System.out.println();
+        }
+    }
+
     class Node {
         char ch;
         HashMap<Character,Node> child = new HashMap<>();
@@ -55,7 +74,7 @@ public class TrieContacts {
         return curr.isTerminal;
     }
 
-    public int startsWith(String prefix){
+    public int find(String prefix){
         Node curr = root;
         for (int i = 0; i < prefix.length(); i++) {
             char ch = prefix.charAt(i);
