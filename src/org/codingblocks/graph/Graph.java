@@ -94,4 +94,66 @@ public class Graph {
         }
         visited.remove(src);
     }
+
+    public boolean BFS(int src, int des) {
+        Queue<Integer> q = new LinkedList<>();
+        q.add(src);
+        HashSet<Integer> visited = new HashSet<>();
+        while (!q.isEmpty()) {
+            //1. remove
+            int rv = q.poll();
+
+            //2. ignore
+            if (visited.contains(rv)) {
+                continue;
+            }
+            //3. add visited
+            visited.add(rv);
+
+            //4. self work
+            if (rv == des)
+                return true;
+
+            //5. Add unvisited neighbours
+            for (int nbrs : map.get(src).keySet()) {
+                if (!visited.contains(nbrs)) {
+                    q.add(nbrs);
+                }
+            }
+
+        }
+        return false;
+    }
+
+    public boolean DFS(int src, int des) {
+        Stack<Integer> s = new Stack<>();
+        s.push(src);
+        HashSet<Integer> visited = new HashSet<>();
+        while (!s.isEmpty()) {
+            //1. remove
+            int rv = s.pop();
+
+            //2. ignore
+            if (visited.contains(rv)) {
+                continue;
+            }
+            //3. add visited
+            visited.add(rv);
+
+            //4. self work
+            if (rv == des)
+                return true;
+
+            //5. Add unvisited neighbours
+            for (int nbrs : map.get(src).keySet()) {
+                if (!visited.contains(nbrs)) {
+                    s.push(nbrs);
+                }
+            }
+
+        }
+        return false;
+    }
+
+
 }
