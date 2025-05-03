@@ -1,4 +1,4 @@
-package org.ashish.blind45.arrays.part1;
+package org.codingblocks.blind45.arrays.part1;
 
 public class RainWaterTrapping {
     public static int bruteForce(int[] height) {
