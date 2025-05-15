@@ -2,6 +2,10 @@ package org.codingblocks.assignment.assignment9;
 
 import java.util.*;
 
+/**
+ * https://hack.codingblocks.com/app/contests/7108
+ * Assignment on Heap and HashMap
+ */
 public class ExistOrNot {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

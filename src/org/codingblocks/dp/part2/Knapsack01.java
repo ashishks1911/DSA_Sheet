@@ -1,2 +1,4 @@
-package org.codingblocks.dp.part2;public class Knapsack01 {
+package org.codingblocks.dp.part2;
+
+public class Knapsack01 {
 }
