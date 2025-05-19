@@ -20,14 +20,23 @@ public class HouseRobber {
     }
 
     public int bottomUp(int[] nums) {
-        int[] dp = new int[nums.length];
+        int dp[] = new int[nums.length];
+        if (dp.length == 1)
+            return nums[0];
+
         dp[0] = nums[0];
         dp[1] = Math.max(nums[0], nums[1]);
+        if(dp.length==2){
+            return dp[1];
+        }
         for (int i = 2; i < nums.length; i++) {
-            dp[i] = Math.max(nums[i] + dp[i - 2], dp[i - 1]);
+            int rob = nums[i] + dp[i - 2];
+            int dont_rob = dp[i - 1];
+            dp[i] = Math.max(rob, dont_rob);
         }
         return dp[dp.length - 1];
     }
+
 
     public static int spaceOptimization(int[] nums) {
         int prev2 = nums[0];        // dp[i-2]
