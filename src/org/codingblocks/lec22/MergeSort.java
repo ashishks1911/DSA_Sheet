@@ -19,7 +19,7 @@ public class MergeSort {
         }
         int mid = (si + ei) / 2;
         int[] fa = mergeSort(arr, si, mid);     //fa = first array
-        int[] sa = mergeSort(arr, mid, ei);     // sa = second array
+        int[] sa = mergeSort(arr, mid + 1, ei);     // sa = second array
         return merge(fa, sa);
     }
 
