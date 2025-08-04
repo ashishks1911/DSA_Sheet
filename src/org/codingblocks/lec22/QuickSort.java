@@ -14,12 +14,9 @@ public class QuickSort {
         if (si>=ei){
             return;
         }
-        System.out.println(Arrays.toString(arr) +", "+ si +" : "+ ei);
         int idx = partition(arr, si, ei);
         sort(arr, si, idx - 1);
-        System.out.println(Arrays.toString(arr) +", "+ si +" : "+ ei);
         sort(arr, idx + 1, ei);
-        System.out.println(Arrays.toString(arr) +", "+ si +" : "+ ei);
 
     }
 
